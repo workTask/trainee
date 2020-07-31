@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  {{>header}}
+  <body>
+       {{>nav}}
+
+   <div class="container mt-4">
+      <div class="jumbotron">
+        <h1 class="display-5">Calculate</h1>
+        <hr class="my-4">
+        <form class = "container mt-4" method="POST">
+            <div class="form-group">
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="enter number" name ="number1">
+            </div>
+            <div class="form-group">
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name = "operator">
+                <option value="!">select operation...</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value=":">:</option>
+                <option value="^">^</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="enter number" name ="number2">
+            </div>
+            <p class="lead">
+              <button class="btn btn-success" type="submit">calculate</button>
+              <button class="btn btn-success" type="reset">reset</button>
+            </p>  
+        </form>   
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="jumbotron">
+        <h1 class="display-6">Answer: {{#if ans}}{{ans}}{{/if}}</h1>
+          <hr class="my-4">
+          <h2 class="display-6">{{#if answer}}{{answer}}{{/if}}</h2>
+          <hr class="my-4">
+      </div>  
+    </div>
+    
+  </body>
+</html> 
