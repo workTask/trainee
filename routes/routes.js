@@ -28,22 +28,18 @@ const router = function(app) {
         } else{
             pool.query('INSERT INTO students (fname, lname, address, data_birth,sex) VALUES ($1,$2,$3,$4,$5)', 
             [fname, lname, address, date_birth,sex ], (error,results) =>{
-              const students=[];
+              
                 if (error){
                   throw error;
                 } else {
                // console.log("result: ",results)
-               pool.query('Select*from students', (err,results)=>{
+               pool.query('Select fname,lname from students', (err,students)=>{
                    if(err){
                        return err;
                     } else {
-                        console.log(results.rows.fname)
+                        console.log(students)
                         
-                        for(let i=0; i<results.rows.length; i++){
-                            students.push(results.rows[i].fname+' '+results.rows[i].lname)
-                        }
-                        console.log(students);
-                    }
+                                           }
                })
                   return res.render('note',{students:students});
                 }
