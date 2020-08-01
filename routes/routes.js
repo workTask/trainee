@@ -5,7 +5,7 @@ var message = '';
 let pool;
 const URL = 'postgres://tjazoeceoycwvg:057769f8f752c8db628d229ea5c015893752d5a7fe45545740d473029bcc3b7e@ec2-54-147-209-121.compute-1.amazonaws.com:5432/d8s34dkaa8r8kh';
   pool = new Pool ({connectionString:URL, ssl:false});
-   //pool = new Pool({ user:'admin', host: 'localhost', database: 'school', password:'', port: 5432});
+  // pool = new Pool({ user:'admin', host: 'localhost', database: 'school', password:'', port: 5432});
 
    //router(app)
 const router = function(app) {
@@ -28,20 +28,26 @@ const router = function(app) {
         } else{
             pool.query('INSERT INTO students (fname, lname, address, data_birth,sex) VALUES ($1,$2,$3,$4,$5)', 
             [fname, lname, address, date_birth,sex ], (error,results) =>{
-              
+                const students = [];
+
                 if (error){
                   throw error;
                 } else {
                // console.log("result: ",results)
-               pool.query('Select fname,lname from students', (err,students)=>{
+               pool.query('Select fname,lname from students', (err,results)=>{
+                   
                    if(err){
                        return err;
                     } else {
-                        console.log(students)
-                        
-                                           }
+                        //const students = results.rows.fname;
+                        for(let i=0;i<results.rows.length;i++){
+                            students.push(results.rows[i].fname+' '+results.rows[i].lname)
+                        }
+                        console.log('reslt******',students);
+                       // res.render('note',{students:students});
+                    }
                })
-                  return res.render('note',{students:students});
+                   res.render('note',{students:students});
                 }
             })
         }
