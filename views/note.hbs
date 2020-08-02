@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
-    {{>header}}
-    <body>
-           {{>nav}}
-        <div class="container mt-4">
-            <div class="jumbotron">
-                <h1 class="display-4">Welcome!!!</h1>
-                <p class="lead">This is my first calculate using Node JS.</p>
-                <hr class="my-4">
-                <p>Click this button, if you want testing my calculate</p>
-               
-                </p>
-            </div>
-        </div>
-        
-    </body>
+{{>header}}
+<body>
+{{>nav}}
+
+{{#notes}}
+
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                {{name}}
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+            {{description}}
+    </div>
+  </div>
+</div>
+     
+{{/notes}}
+
+{{>footer}}  
+</body>
 </html> 
