@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser=require('body-parser');
 const hbs = require('hbs');
 const path = require('path');
-// my 
-const studentRouter = require('./routes/student')
-const calcRouter = require('./routes/calculate')
+
+const studentRouter = require('./routes/students');
+const calcRouter = require('./routes/calculate');
+const noteRouter = require('./routes/note');
+
 const dotenv = require('dotenv').config();
 const app = express();
 const port = process.env.PORT ||2001;
@@ -21,6 +23,7 @@ hbs.registerPartials(__dirname+'/views/partials');
 
 studentRouter(app);
 calcRouter(app);
+noteRouter(app);
 
 app.listen(port, (error) => {
  if (error){
