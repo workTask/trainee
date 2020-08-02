@@ -37,7 +37,7 @@ const router = function(app) {
                 if (error){
                   throw error;
                 } else {
-                    res.redirect('/stud');
+                    res.redirect('/students');
                 }
             })
         }
