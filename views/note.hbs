@@ -3,29 +3,29 @@
 {{>header}}
 <body>
 {{>nav}}
-
-{{#notes}}
-
-
-<div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                {{name}}
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-            {{description}}
-    </div>
+  <div class="container mt-4">
+      <button type="button" class="btn btn-primary btn-lg btn-block">Add note</button>
+      <br>
+      {{#notes}}
+            <div class="card card-body bg-light">
+              <h4> {{name}}<button class="btn btn-outline-primary float-right" type="button" data-toggle="collapse" data-target="#notes_{{id}}" aria-expanded="false" aria-controls="collapseExample">
+                  view
+                </button>
+                </h4>
+              </p>
+              <div class="collapse" id="notes_{{id}}">
+                <div class="card card-body">
+                  {{description}}
+                 </div>
+                 <br>
+                 <br>
+                  <button type="button" class="btn btn-outline-success">Edit</button>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+              </div>
+            </div> 
+            <br>
+      {{/notes}}
   </div>
-</div>
-     
-{{/notes}}
-
 {{>footer}}  
 </body>
 </html> 
