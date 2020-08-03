@@ -9,7 +9,7 @@ const noteRouter = require('./routes/note');
 
 const dotenv = require('dotenv').config();
 const app = express();
-const port = process.env.PORT ||2001;
+const port = process.env.PORT ||2000;
 //middleware
 // for form in html
 app.use(bodyParser.urlencoded({extended: true}))

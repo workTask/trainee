@@ -21,17 +21,17 @@
                  </div>
                  <br>
                  <br>
-                  <button type="button" class="btn btn-outline-success"  data-toggle="modal" data-target="#editModel">Edit</button>
+                  <button type="button" class="btn btn-outline-success"  data-toggle="modal"  data-name ="{{name}}" data-description=" {{description}}" data-target="#editModel">Edit</button>
                   <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModel">Delete</button>
               </div>
             </div> 
             <br>
+            {{>addModal}}  
+            {{>editModal}} 
+            {{>deleteModal}} 
       {{/notes}}
   </div>
 <!-- Modal for button add note -->
-{{>addModal}}  
-{{>deleteModal}} 
-{{>editModal}} 
 {{>footer}}  
 </body>
 </html> 
