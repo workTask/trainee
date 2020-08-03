@@ -1,0 +1,31 @@
+
+<!-- Modal for button add note -->
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--added form-->
+      <form method="DELETE" action="/deleteNote">
+          <div class="modal-header">
+                <!--Title model-->
+            <h5 class="modal-title" id="deleteModelLabel">Delete note</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <!--Body model-->
+          <div class="modal-body">
+             <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 col-form-label" >Name</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" name="nameNote" >
+                </div>
+            </div> 
+             
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-success">Save</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

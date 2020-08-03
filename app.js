@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 //app.set('view engine','ejs');
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname+'/views/partials');
+hbs.registerPartials(__dirname+'/views/noteModal');
 
 
 studentRouter(app);

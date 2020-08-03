@@ -4,8 +4,8 @@
 <body>
 {{>nav}}
   <div class="container mt-4">
-      <!-- Button for added modal -->
-      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#formModel">Add note</button>
+      <!-- The Button for added modal -->
+      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#addModel">Add note</button>
       <br>
        <!--  -->
       {{#notes}}
@@ -21,49 +21,17 @@
                  </div>
                  <br>
                  <br>
-                  <button type="button" class="btn btn-outline-success">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                  <button type="button" class="btn btn-outline-success"  data-toggle="modal" data-target="#editModel">Edit</button>
+                  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModel">Delete</button>
               </div>
             </div> 
             <br>
       {{/notes}}
   </div>
-
 <!-- Modal for button add note -->
-<div class="modal fade" id="formModel" tabindex="-1" role="dialog" aria-labelledby="formModelLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!--added form-->
-      <form method="POST" action="/createNote">
-          <div class="modal-header">
-                <!--Title model-->
-            <h5 class="modal-title" id="formModelLabel">Add note</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-              <!--Body model-->
-          <div class="modal-body">
-             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 col-form-label" >Name</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" name="nameNote" >
-                </div>
-            </div> 
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 col-form-label" >Description</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control"  name="description"></textarea>
-                </div>
-            </div> 
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-success">Save</button>
-          </div>
-      </form>
-    </div>
-  </div>
-</div>
+{{>addModal}}  
+{{>deleteModal}} 
+{{>editModal}} 
 {{>footer}}  
 </body>
 </html> 
