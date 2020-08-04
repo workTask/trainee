@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
     {{>header}}
-    <body>
-           {{>nav}}
-        <div class="container mt-4">
-            <div class="jumbotron">
-                <h1 class="display-4">Welcome!!!</h1>
-                <p class="lead">This is my first apps using Node JS.</p>
-                <hr class="my-4">
-                <p>Click the button if you want to test one of my programs</p>
-               
-                <p class="lead">
-                    <a class="btn btn-outline-secondary btn-lg" href="/calculate" role="button">Test calculate</a>
-                    <a class="btn btn-outline-info btn-lg" href="/students" role="button">Student list</a>
-                    <a class="btn btn-outline-warning btn-lg" href="/note" role="button">Note</a>
-                    <a class="btn btn-outline-danger btn-lg" href="#" role="button">App 4</a>
-                    <a class="btn btn-outline-dark btn-lg" href="#" role="button">App 5</a>
-                </p>
-            </div>
-        </div>
-          {{>footer}}  
-    </body>
+      
+      <link rel="stylesheet" href="/css/ind.css">
+      <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+<body>
+{{>nav}}
+<div class="container">
+  <div class="jumbotron">
+     <h1 class="display-4">Welcome!!!</h1>
+    <p class="lead">This is my first apps using Node JS.</p>
+    <hr class="my-4">
+
+      <div class="container">
+        {{#projects}}
+          <div class="card">
+            <a href="/{{link}}">
+            <h1>{{name}}</h1>
+            <p>{{content}} </p>
+            </a>
+          </div>
+        {{/projects}}   
+      </div>
+   </div>
+
+
+ </body> 
+
 </html> 

@@ -9,11 +9,7 @@ pool = new Pool ({connectionString:URL, ssl:false});
 
 //router(app)
 const router = function(app) {
-    app.get('/', (req,res) => {
-        res.render('index');
-    })
- 
-    app.get('/students', (req,res) => {
+      app.get('/students', (req,res) => {
          //dbh students local users
         pool.query('Select fname,lname from students', (err,results)=>{
             if(err){

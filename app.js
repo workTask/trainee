@@ -6,6 +6,7 @@ const path = require('path');
 const studentRouter = require('./routes/students');
 const calcRouter = require('./routes/calculate');
 const noteRouter = require('./routes/note');
+const indexRouter = require('./routes/index');
 
 const dotenv = require('dotenv').config();
 const app = express();
@@ -25,7 +26,7 @@ hbs.registerPartials(__dirname+'/views/noteModal');
 studentRouter(app);
 calcRouter(app);
 noteRouter(app);
-
+indexRouter(app);
 app.listen(port, (error) => {
  if (error){
     return console.log(`Error ${error}`)
