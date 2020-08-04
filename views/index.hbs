@@ -8,27 +8,27 @@
     
 <body>
 {{>nav}}
-<div class="logo">
-  
-     <h2 class="display-4">Welcome!!!</h>
-    <p class="lead">This is my first apps using Node JS.</p>
-    <hr class="my-4">
-
+<div id="page-container">
+   <div id="content-wrap">
+    <div class="logo">
+      <h1 class="display-4">Welcome!!!</h1>
+      <p class="lead">This is my first apps using Node JS.</p>
+      <hr class="my-4">
     </div>
-    
-
-<div class="root">
-      <div class="container">
-            {{#projects}}
-          <div class="card">
-            <a href="/{{link}}">
-            <h1>{{name}}</h1>
-            <p>{{content}} </p>
-            </a>
+      <div class="root">
+          <div class="container">
+                {{#projects}}
+              <div class="card">
+                <a href="/{{link}}">
+                <h1>{{name}}</h1>
+                <p>{{content}} </p>
+                </a>
+              </div>
+            {{/projects}}   
           </div>
-           
-        {{/projects}}   
-   </div>
-   </div>
+      </div>
+    </div>
+    <footer id="footer"> {{>footer}} </footer>
+  <div>
  </body> 
 </html> 
