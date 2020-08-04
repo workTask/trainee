@@ -1,7 +1,7 @@
-* {
-    box-sizing: border-box
+
+  * {
+    box-sizing: border-box;
   }
-  
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -11,7 +11,7 @@
     background: #F6F6F6;
   }
   
-  #root {
+  .root {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -66,7 +66,7 @@
   
   @media screen and (min-width: 400px) {
     .card {
-      flex: 1 1 calc(33% - 2rem);
+      flex: 1 1 calc(43% - 2rem);
     }
   }
   

@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
     {{>header}}
-      
-      <link rel="stylesheet" href="/css/ind.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+      <link rel="stylesheet" href="/css/ind.css">
+    
 <body>
 {{>nav}}
-<div class="container">
-  <div class="jumbotron">
-     <h1 class="display-4">Welcome!!!</h1>
+<div class="logo">
+  
+     <h2 class="display-4">Welcome!!!</h>
     <p class="lead">This is my first apps using Node JS.</p>
     <hr class="my-4">
 
-      <div class="card-group">
+    </div>
+    
+
+<div class="root">
+      <div class="container">
             {{#projects}}
           <div class="card">
             <a href="/{{link}}">
@@ -20,8 +26,9 @@
             <p>{{content}} </p>
             </a>
           </div>
+           
         {{/projects}}   
-      </div>
+   </div>
    </div>
  </body> 
 </html> 
