@@ -41,7 +41,7 @@ const router = function(app) {
     });
     //!!!!!!!!!!!!!!!
     app.post('/deleteNote', (req,res) => { 
-        //console.log('***********',req.body.nameNote)
+        console.log('**delete*********',req.body);
         pool.query('DELETE FROM notes WHERE name=$1', [req.body.nameNote], (err,results)=>{
             if(err){
                 return err;
